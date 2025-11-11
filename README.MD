@@ -1,0 +1,2 @@
+# Studijní opory do optimalizace
+
