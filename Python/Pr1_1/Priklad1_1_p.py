@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 from matplotlib import cm
 plt.rcParams["svg.fonttype"] = ('none')
 plt.rcParams['font.family']='CMU Serif'
+plt.rcParams['text.usetex'] = True
 # Zadani
 L1 = 120 #mm
 L2 = 80 #mm
@@ -11,20 +12,20 @@ k1 = 10 #N/mm
 k2 = 100 #N/mm
 F = 10 #N
 
-Nx1=100+1 #Pocet dilku pro vykresleni x1
-Nx2=100+1 #Pocet dilku pro vykresleni x2
-x1 = np.linspace(0,5,Nx1) #Rovnomerne rozdeleni x1 pomoci Nx1 dilku
-x2 = np.linspace(15,20,Nx2) #Rovnomerne rozdeleni x2 pomoci Nx2 dilku
+Nx1=100+1 # Pocet dilku pro vykresleni x1
+Nx2=100+1 # Pocet dilku pro vykresleni x2
+x1 = np.linspace(0,5,Nx1) # Rovnomerne rozdeleni x1 pomoci Nx1 dilku
+x2 = np.linspace(15,20,Nx2) # Rovnomerne rozdeleni x2 pomoci Nx2 dilku
 
-x1v,x2v = np.meshgrid(x1,x2) #Priprava mrizky pro vypocet
+x1v,x2v = np.meshgrid(x1,x2) # Priprava mrizky pro vypocet
 
 # Celkova potencialni energie systemu
 Energie=1/2*k1*(np.sqrt((L1+x1v)**2+(x2v)**2)-L1)**2+\
 1/2*k2*(np.sqrt((L2-x1v)**2+(x2v)**2)-L2)**2-\
 F*x2v
 
-minimum = np.min(Energie) # maximum na rozsahu mrizky
-maximum = np.max(Energie) # minimum na rozsahu mrizky
+minimum = np.min(Energie) # Maximum na rozsahu mrizky
+maximum = np.max(Energie) # Minimum na rozsahu mrizky
 
 # Hledani indexu minima potencialni energie
 ind = np.unravel_index(np.argmin(Energie, axis=None), Energie.shape)
