@@ -56,7 +56,7 @@ for i in np.arange(0,Nx1):
 ###
 # Vykresleni vysledku
 ###
-x1v,x2v = np.meshgrid(x1,x2) # priprava mrizky navrhových promennych 
+x1v,x2v = np.meshgrid(x1,x2) # priprava mrizky navrhovych promennych 
 fig, ax = plt.subplots(figsize=(6, 6)) # priprava ramecku obrazku
 
 # Vykresleni cilove funkce a vypsani hladin
