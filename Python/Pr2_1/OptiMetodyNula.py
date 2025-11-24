@@ -41,15 +41,16 @@ def Swann(fun,x0,Delta=0.1):
         return a,b
 
 def PuleniInt(fun,a,b,tol=0.01,flag=1):
-    delta = 1
-    i = 0 
+    delta = 1               #Zahajeni vypoctu
+    i = 0                   #Pocitadlo
     while delta > tol:
-        L = (b-a)
-        xL = a+1/4*L
-        xM = (a+b)/2
-        xP = b-1/4*L
-        
-        fL = fun(xL)
+        L = (b-a)           #Delka intervalu
+        #Vypocet kandidatu
+        xL = a+1/4*L  
+        xM = (a+b)/2 
+        xP = b-1/4*L        
+        #Vypocet cilove funkce
+        fL = fun(xL)        
         fM = fun(xM)
         fP = fun(xP)
         
@@ -125,7 +126,6 @@ def PowellMetoda(fun,x1,Delta=0.1,tol=0.01,flag=1):
         f3 = fun(x3) 
         Fmin = np.min([f1,f2,f3])
         Xmin = x1 if Fmin==f1 else x2 if Fmin==f2 else x3
-        
         xOver = KvadApro(fun,x1,x2,x3,flag=0)[0]
         
         if flagx3 == 0:

@@ -39,4 +39,4 @@ xOptiBi = Bisekce(myfun, a, b)[0]
 xOptiSe = Secant(myfun, a, b)[0]
 
 # Metoda secny
-xOptiSe = NewtonRapson(myfun, (a+b)/2)
+xOptiSe = NewtonRaphson(myfun, (a+b)/2)

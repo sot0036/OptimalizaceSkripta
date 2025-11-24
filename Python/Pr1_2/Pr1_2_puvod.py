@@ -44,6 +44,7 @@ for i in np.arange(0,Nx1):
         m[j,i] = rho*L*S
         q = rho*g*S
         Mo = (F/2+q*L/2)*L/2-q*L**2/2
+        Mo2 = (F/2-q*L/2)*L/2
         Jz = 1/12*x1[i]*x2[j]**3
         Jy = 1/12*x1[i]**3*x2[j]
         w_F[j,i] = (F*L**3)/(48*E*Jz) + (5*q*L**4)/(384*E*Jz)

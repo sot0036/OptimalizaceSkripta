@@ -27,7 +27,7 @@ def Bisekce(fun,a,b,tol=0.01,flag=1):
 
     return xM,delta
 
-def Secant(fun,a,b,tol=0.001,flag=1):
+def Secant(fun,a,b,tol=0.01,flag=1):
     dfs = 1
     i=0
     while np.abs(dfs) > tol:
@@ -39,23 +39,23 @@ def Secant(fun,a,b,tol=0.001,flag=1):
         if np.abs(dfs) < tol:
             break
         if dfa*dfs >0:
-            b = xs
-        else:
             a = xs
+        else:
+            b = xs
         
     delta = (b-a)/2 
     if flag == 1: print (f"Optimum pomocí metody sečny se nachází {xs:0.5f} +/- {delta:0.5f}.\nPro vypočet bylo nutné {i} iterací.\n")
 
     return xs,delta
 
-def NewtonRapson(fun,xk,tol=0.001,flag=1):
+def NewtonRaphson(fun,xk,tol=0.01,flag=1):
     err = 1
     i=0
     while err > tol:
         i+=1
         x0=xk
         xk=x0-cdiff(fun, x0)/cdiff2(fun, x0)
-        err =np.abs(xk-x0)   
+        err =np.abs(cdiff(fun, x0))   
 
     if flag == 1: print (f"Optimum pomocí metody NewtonRapson se nachází {xk:0.5f}.\nPro vypočet bylo nutné {i} iterací.\n")
     
