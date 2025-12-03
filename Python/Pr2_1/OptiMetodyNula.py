@@ -87,7 +87,7 @@ def ZlatyRez(fun,a,b,tol=0.01,flag=1):
         delta = (b-a)/2
         i +=1    
     xStar = (b+a)/2
-    if flag == 1: print (f"Optimum pomocí metody půlení intervalu se nachází {xStar:0.5f} +/- {delta:0.5f}.\nPro vypočet bylo nutné {i} iterací.\n")        
+    if flag == 1: print (f"Optimum pomocí metody zlateho rezu se nachází {xStar:0.5f} +/- {delta:0.5f}.\nPro vypočet bylo nutné {i} iterací.\n")        
     return xStar, delta
 
 def KvadApro(fun,x1,x2,x3,flag=1): ## 
